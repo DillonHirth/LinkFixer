@@ -19,7 +19,6 @@ headers = {
 }
 
 
-
 def get_url_src(url):
     res = requests.get(url, headers=headers)
     if res.status_code == 200:
@@ -27,15 +26,16 @@ def get_url_src(url):
         print("request status_code:", res.status_code)
         soup = BeautifulSoup(res.content, 'html.parser', parse_only=only_meta_tags)
 
-
         for link in soup.find_all('meta'):
             if link.get('property') == "og:video:secure_url":
                 direct_link = (link.get('content'))
+                break
         return direct_link
     else:
         print("bad response:", res.status_code)
 
-#get_url_src('https://ifunny.co')
+
+# get_url_src('https://ifunny.co')
 
 
 class CustomBot(commands.Bot):
@@ -54,7 +54,6 @@ class CustomBot(commands.Bot):
             await message.channel.send(response)
         await self.process_commands(message)
 
-
-
+ 234
 bot = CustomBot(command_prefix="!")
 bot.run(TOKEN)

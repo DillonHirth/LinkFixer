@@ -54,6 +54,5 @@ class CustomBot(commands.Bot):
             await message.channel.send(response)
         await self.process_commands(message)
 
- 234
 bot = CustomBot(command_prefix="!")
 bot.run(TOKEN)

@@ -1,14 +1,8 @@
 import os
-import random
-import discord
 import requests
 from bs4 import BeautifulSoup
 from bs4 import SoupStrainer
-from dotenv import load_dotenv
-from discord.ext import commands
 
-load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
 EMAIL = os.getenv('IFUNNY_EMAIL')
 PASS = os.getenv('IFUNNY_PW')
 headers = {
@@ -34,25 +28,4 @@ def get_url_src(url):
     else:
         print("bad response:", res.status_code)
 
-
 # get_url_src('https://ifunny.co')
-
-
-class CustomBot(commands.Bot):
-
-    async def on_ready(self):
-        print(f'{self.user} has connected to Discord!')
-        for guild in self.guilds:
-            print(f'{guild.name} (id: {guild.id})\n')
-
-    async def on_message(self, message):
-        if message.author == bot.user:
-            return
-        if 'ifunny.co' in message.content:
-            print("message content:", message.content)
-            response = get_url_src(message.content)
-            await message.channel.send(response)
-        await self.process_commands(message)
-
-bot = CustomBot(command_prefix="!")
-bot.run(TOKEN)

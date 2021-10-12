@@ -14,11 +14,11 @@ headers = {
 
 
 def get_url_src(url):
-    res = requests.get(url, headers=headers)
-    if res.status_code == 200:
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
         only_meta_tags = SoupStrainer("meta")
-        print("request status_code:", res.status_code)
-        soup = BeautifulSoup(res.content, 'html.parser', parse_only=only_meta_tags)
+        print("request status_code:", response.status_code)
+        soup = BeautifulSoup(response.content, 'html.parser', parse_only=only_meta_tags)
 
         for link in soup.find_all('meta'):
             if link.get('property') == "og:video:secure_url":
@@ -26,6 +26,6 @@ def get_url_src(url):
                 break
         return direct_link
     else:
-        print("bad response:", res.status_code)
+        print("bad response:", response.status_code)
 
 # get_url_src('https://ifunny.co')

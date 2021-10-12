@@ -2,3 +2,5 @@
 .env
 err.log
 /_creds.txt
+
+Bot/__pycache__/

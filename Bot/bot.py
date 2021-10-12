@@ -1,8 +1,7 @@
 from discord.ext import commands
-from dotenv import load_dotenv
 from url import get_url_src
 
-load_dotenv()
+
 
 
 class CustomBot(commands.Bot):

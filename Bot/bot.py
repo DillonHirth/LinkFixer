@@ -2,8 +2,6 @@ from discord.ext import commands
 from url import get_url_src
 
 
-
-
 class CustomBot(commands.Bot):
 
     async def on_ready(self):

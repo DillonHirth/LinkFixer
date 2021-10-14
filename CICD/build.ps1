@@ -3,18 +3,17 @@ $computerName = "COWSUNRAID"
 $userId = "root"
 $pass = Get-Content ".\_creds.txt" | ConvertTo-SecureString -AsPlainText -Force
 $creds = New-Object System.Management.Automation.PSCredential -ArgumentList $userId, $pass
-$packageName = "linkFixerImage_1_0_5.tar"
-$imageName = "link-fixer:1.0.5"
+$major = 1
+$minor = 0
+$patch = 6
+$version = "$major.$minor.$patch"
+$packageName = "linkFixerImage_$version.tar"
+$imageName = "link-fixer:$version"
 $containerName = "linkfixer"
 
-
-
-py -m pip freeze > $PWD\requirements.txt
 docker build --tag $imageName .
 docker save -o ..\$packageName $imageName
 Copy-Item -Path c:\git\DiscordBots\$packageName -Destination \\COWSUNRAID\Files\DiscordBots\LinkFixer
-
-
 
 try {
 #open SSH session

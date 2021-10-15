@@ -3,8 +3,6 @@ import requests
 from bs4 import BeautifulSoup
 from bs4 import SoupStrainer
 
-EMAIL = os.getenv('IFUNNY_EMAIL')
-PASS = os.getenv('IFUNNY_PW')
 headers = {
     'user-agent': 'linkFixer/0.0.1',
     'Accept-Language': 'en-US,en;q=0.5',
@@ -27,5 +25,3 @@ def get_url_src(url):
         return direct_link
     else:
         print("bad response:", response.status_code)
-
-# get_url_src('https://ifunny.co')

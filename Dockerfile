@@ -1,10 +1,25 @@
 # syntax=docker/dockerfile:1
-FROM python:3.9-slim-buster
-WORKDIR /app
-RUN pip3.9 install pipenv
-COPY Bot ./Bot
+FROM python:3.9-slim-buster AS base
+
+# Setup env
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONFAULTHANDLER 1
+
+FROM base AS python-deps
+
+# Install pipenv
+RUN pip install pipenv
+
+# Install python dependencies in /.venv
 COPY Pipfile* .
-COPY .env .
-RUN pipenv lock --keep-outdated --requirements > requirements.txt
-RUN pip3.9 install -r requirements.txt
-CMD ["python3", "Bot/__main__.py"]
+RUN PIPENV_VENV_IN_PROJECT=1 pipenv install --deploy --ignore-pipfile
+
+FROM base AS runtime
+
+# Copy virtual env from python-deps stage
+COPY --from=python-deps /.venv /.venv
+ENV PATH="/.venv/bin:$PATH"
+
+# Install application into container
+COPY . .
+ENTRYPOINT ["python3", "Bot/__main__.py"]

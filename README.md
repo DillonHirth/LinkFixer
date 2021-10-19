@@ -12,7 +12,8 @@ This is a simple discord bot that fixes terrible ifunny.com mobile links that fo
 
 ## The How <sub>(to install)</sub>
 
-I create a docker image, then output as a tar package. If you would like to have this tar package to load into docker:
+So, there are alot of options out there for hosting a simple discord bot. Because this one should have fairly low overhead, I chose to host it on my Unraid server using Docker.
+
 
 <pre><code>
 $packageName = "linkFixerImage.tar"

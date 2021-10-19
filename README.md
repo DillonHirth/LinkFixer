@@ -12,15 +12,23 @@ This is a simple discord bot that fixes terrible ifunny.com mobile links that fo
 
 ## The How <sub>(to install)</sub>
 
-So, there are alot of options out there for hosting a simple discord bot. Because this one should have fairly low overhead, I chose to host it on my Unraid server using Docker.
+### Locally
+Once the repo is cloned, in the terminal run the below snippet to get up and running. make sure your terminal's working directory is the project root. 
+```:
+pip3.9 install pipenv
+pipenv lock
+pipenv install --dev
+```
 
+### Creating a Docker image
 
-<pre><code>
+So, there are a lot of options out there for hosting a simple discord bot. Because this Bot should have fairly low overhead and the fact that I'm always looking for more uses for my server, I chose to host it on my Unraid server using Docker.
+```python:
 $packageName = "linkFixerImage.tar"
 $imageName = "link-fixer:0.0.0"
 docker build --tag $imageName .
-docker save -o ..\$packageName $imageName
-</code></pre>
+docker save -o ..\$packageName $imageName #creates the tar, that can then be pushed where needed and loaded into docker
+```
 ## The Future
 
 - Tests, Tests, and more Tests please

@@ -20,6 +20,7 @@ soupsieve = "==2.2.1"
 typing-extensions = "==3.10.0.2"
 urllib3 = "==1.26.6"
 yarl = "==1.6.3"
+pylint = "*"
 
 [dev-packages]
 

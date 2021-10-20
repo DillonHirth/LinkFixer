@@ -40,7 +40,9 @@ docker save -o ..\$packageName $imageName #creates the tar, that can then be pus
 - git hooks to auto-build/deploy on merges to main. 
 
 ## Notes
-###Dockerfile 
+
+### Dockerfile 
+
 So the progression of the docker file was interesting. I started with the most basic dockerfile possible from the guide on dockers website
 until I found this article: https://pythonspeed.com/articles/pipenv-docker/ and took what I found there to alter what I had. But, I wanted more.
 running lock in docker to output a requirements file, didn't strike me as deterministic. Not to mention, I also really wanted to use pipenv for the entire process, not just half of it. So the rabbit hole got deeper.

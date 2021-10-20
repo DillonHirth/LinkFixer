@@ -37,6 +37,7 @@ docker save -o ..\$packageName $imageName #creates the tar, that can then be pus
 - Add Bot commands
 - I need to comment my code
 - Logging. Better output while running and building. 
+- git hooks to auto-build/deploy on merges to main. 
 
 ## Notes
 ###Dockerfile 

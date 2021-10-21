@@ -1,6 +1,6 @@
 """os module for .env file"""
 from discord.ext import commands
-from src.url import get_url_src
+from bot_src.url import get_url_src
 
 
 class CustomBot(commands.Bot):

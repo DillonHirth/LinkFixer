@@ -4,3 +4,5 @@ err.log
 /_creds.txt
 
 bot_src/__pycache__/
+
+.creds

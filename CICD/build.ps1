@@ -5,7 +5,7 @@ $pass = Get-Content ".\.creds" | ConvertTo-SecureString -AsPlainText -Force
 $creds = New-Object System.Management.Automation.PSCredential -ArgumentList $userId, $pass
 $major = 1
 $minor = 0
-$patch = 6
+$patch = 7
 $version = "$major.$minor.$patch"
 $packageName = "linkFixerImage_$version.tar"
 $imageName = "link-fixer:$version"
@@ -24,7 +24,7 @@ try {
 
 
 #delete the previous docker image and load the new docker image
-    $command = " docker rmi $(docker images "link-fixer" -q)"
+    $command = "docker rmi $(docker images "link-fixer" -q)"
     "Command: {0}" -f $command
     $sshOut = (Invoke-SSHCommand -SessionId $sessionId -Command $command).Output
     "Results: '{0}'" -f $sshOut

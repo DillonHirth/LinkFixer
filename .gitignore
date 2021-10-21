@@ -4,3 +4,5 @@ err.log
 /_creds.txt
 
 src/__pycache__/
+
+.creds

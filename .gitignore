@@ -3,6 +3,6 @@
 err.log
 /_creds.txt
 
-src/__pycache__/
+bot_src/__pycache__/
 
 .creds

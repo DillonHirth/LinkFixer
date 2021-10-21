@@ -1,7 +1,7 @@
 ﻿Set-Location -Path C:\git\DiscordBots\LinkFixer
 $computerName = "COWSUNRAID"
 $userId = "root"
-$pass = Get-Content ".\_creds.txt" | ConvertTo-SecureString -AsPlainText -Force
+$pass = Get-Content ".\.creds" | ConvertTo-SecureString -AsPlainText -Force
 $creds = New-Object System.Management.Automation.PSCredential -ArgumentList $userId, $pass
 $major = 1
 $minor = 0

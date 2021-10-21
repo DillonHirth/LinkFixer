@@ -1,6 +1,7 @@
+"""os module for .env file"""
 import os
-from bot import CustomBot
 from dotenv import load_dotenv
+from src.bot import CustomBot
 
 load_dotenv()
 

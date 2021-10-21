@@ -1,4 +1,4 @@
-import os
+"""os module for .env file"""
 import requests
 from bs4 import BeautifulSoup
 from bs4 import SoupStrainer
@@ -12,6 +12,7 @@ headers = {
 
 
 def get_url_src(url):
+    """os module for .env file"""
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         only_meta_tags = SoupStrainer("meta")
@@ -23,5 +24,4 @@ def get_url_src(url):
                 direct_link = (link.get('content'))
                 break
         return direct_link
-    else:
-        print("bad response:", response.status_code)
+    return "bad response:" + str(response.status_code)

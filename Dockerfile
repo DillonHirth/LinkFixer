@@ -22,4 +22,4 @@ ENV PATH="/.venv/bin:$PATH"
 
 # Install application into container
 COPY . .
-ENTRYPOINT ["python3", "bot_src/__main__.py"]
+ENTRYPOINT ["python3", "__main__.py"]

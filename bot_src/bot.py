@@ -4,7 +4,7 @@ from bot_src.url import get_url_src
 
 
 class CustomBot(commands.Bot):
-    """os module for .env file2"""
+    """os module for .env file"""
 
     async def on_ready(self):
         """os module for .env file"""

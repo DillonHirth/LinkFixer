@@ -20,4 +20,4 @@ jobs:
         pip install pipenv
         PIPENV_VENV_IN_PROJECT=1 pipenv install --dev --ignore-pipfile --verbose
     - name: Analysing the code with pylint
-      run: python lint.py --path ./CICD
+      run: python CICD\lint.py

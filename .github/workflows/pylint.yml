@@ -16,8 +16,9 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        pip install pylint
         pip install pipenv
-        pipenv install --dev --ignore-pipfile
+        pipenv install --dev --ignore-pipfile --verbose
     - name: Analysing the code with pylint
       run: |
         pylint $(find . -name "*.py" | xargs)

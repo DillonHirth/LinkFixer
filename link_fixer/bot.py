@@ -1,7 +1,6 @@
 """os module for .env file"""
 from discord.ext import commands
-from bot_src.url import get_url_src
-
+from link_fixer import url
 
 class CustomBot(commands.Bot):
     """os module for .env file"""
@@ -18,6 +17,6 @@ class CustomBot(commands.Bot):
             return
         if 'ifunny.co' in message.content:
             print("message content:", message.content)
-            response = get_url_src(message.content)
+            response = url.get_url_src(message.content)
             await message.channel.send(response)
         await self.process_commands(message)

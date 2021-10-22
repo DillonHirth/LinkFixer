@@ -21,4 +21,6 @@ jobs:
         PIPENV_VENV_IN_PROJECT=1 pipenv install --dev --ignore-pipfile --verbose
     - name: Analysing the code with pylint
       run: |
-        pylint $(find . -name "*.py" | xargs)
+        pylint $(find . -name "__main__.py" | xargs)
+        pylint $(find . -name "bot.py" | xargs)
+        pylint $(find . -name "url.py" | xargs)

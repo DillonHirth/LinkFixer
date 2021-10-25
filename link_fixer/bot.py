@@ -1,6 +1,10 @@
-"""os module for .env file"""
+"""
+discord.ext: part of discord.py package
+    https://discordpy.readthedocs.io/en/stable/ext/commands/index.html
+"""
 from discord.ext import commands
 from link_fixer import url
+
 
 class CustomBot(commands.Bot):
     """os module for .env file"""

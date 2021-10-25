@@ -1,4 +1,8 @@
-"""os module for .env file"""
+"""
+os: to reference environment variables
+dotenv: used to read key:value pairs from the .env file and loads them as env variables
+    https://github.com/theskumar/python-dotenv
+"""
 import os
 from dotenv import load_dotenv
 from link_fixer import bot

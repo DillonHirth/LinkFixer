@@ -1,4 +1,7 @@
-"""os module for .env file"""
+"""
+bs4: beautiful soup, used for html parsing
+    https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+"""
 import requests
 from bs4 import BeautifulSoup
 from bs4 import SoupStrainer

@@ -31,11 +31,12 @@ class CustomBot(commands.Bot):
         """
         if message.author == self.user:
             return
-        if 'https://ifunny.co' in message.content:
+        if 'https://' in message.content:
             print("message content:", message.content)
             message_url = message_parse_for_url(message.content)
             response = url.get_url_src(message_url)
             await message.channel.send(response)
+            await message.delete()
         await self.process_commands(message)
 
 

@@ -31,7 +31,7 @@ class CustomBot(commands.Bot):
         """
         if message.author == self.user:
             return
-        if 'https://' in message.content:
+        if 'https://ifunny.co' in message.content:
             print("message content:", message.content)
             message_url = message_parse_for_url(message.content)
             response = url.get_url_src(message_url)
@@ -45,11 +45,9 @@ def message_parse_for_url(message):
     takes message string
     returns url that was within that message
     """
-    # split the message.content by spaces
     message_list = message.split()
-    # iterate through until i have a link
     for item in message_list:
         print(item)
-        if 'https://' in item or 'ifunny.co' in item:
+        if 'https://ifunny.co' in item:
             return item
     return None

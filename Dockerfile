@@ -4,6 +4,7 @@ FROM python:3.9-slim-buster AS base
 # Setup env
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONFAULTHANDLER 1
+ENV PYTHONPATH=.
 
 FROM base AS python-deps
 
@@ -22,4 +23,4 @@ ENV PATH="/.venv/bin:$PATH"
 
 # Install application into container
 COPY . .
-ENTRYPOINT ["python3", "__main__.py"]
+ENTRYPOINT ["python3", "link_fixer/__main__.py"]

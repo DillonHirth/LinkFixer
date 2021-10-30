@@ -19,7 +19,11 @@ pip3.9 install pipenv
 pipenv lock
 pipenv install --dev
 ```
-
+add a .env file into the root
+```:
+# .env
+DISCORD_TOKEN=<copy your discord token here>
+```
 ### Creating a Docker image
 
 So, there are a lot of options out there for hosting a simple discord bot. Because this Bot should have fairly low overhead and the fact that I'm always looking for more uses for my server, I chose to host it on my Unraid server using Docker.
@@ -29,15 +33,6 @@ $imageName = "link-fixer:0.0.0"
 docker build --tag $imageName .
 docker save -o ..\$packageName $imageName #creates the tar, that can then be pushed where needed and loaded into docker
 ```
-## The Future
-
-- Tests, Tests, and more Tests please
-- Better link detection
-- More URL's
-- Add Bot commands
-- I need to comment my code
-- Logging. Better output while running and building. 
-- git hooks to auto-build/deploy on merges to main. 
 
 ## Notes
 

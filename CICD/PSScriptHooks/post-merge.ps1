@@ -1,6 +1,5 @@
 $git_log_output = git log --oneline --merges main -1
-write-host $git_log_output
-if ($git_log_output -contains "into main"){
+if ($git_log_output.Contains("into main")){
     write-host "merge to main detected, building and deploying"
     powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\git\DiscordBots\LinkFixer\CICD\build.ps1"
 }

@@ -26,7 +26,7 @@ class CustomBot(commands.Bot):
     async def on_message(self, message):
         """
         override of the on_message event
-        confirms message isnt from bot, then passes the message to url.get_url_src which
+        confirms message isn't from bot, then passes the message to url.get_url_src which
         returns the direct link. that direct link is then sent to to the message channel
         """
         if message.author == self.user:

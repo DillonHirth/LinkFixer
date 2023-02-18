@@ -1,4 +1,4 @@
-﻿Set-Location -Path C:\git\DiscordBots\LinkFixer
+﻿Set-Location -Path C:\Users\Dillon\OneDrive\Documents\git\DiscordBots\LinkFixer
 $computerName = "COWSUNRAID"
 $userId = "root"
 $pass = Get-Content ".\.creds" | ConvertTo-SecureString -AsPlainText -Force
@@ -13,7 +13,7 @@ $containerName = "linkfixer"
 
 docker build --tag $imageName .
 docker save -o ..\$packageName $imageName
-Copy-Item -Path c:\git\DiscordBots\$packageName -Destination \\COWSUNRAID\Files\DiscordBots\LinkFixer
+Copy-Item -Path C:\Users\Dillon\OneDrive\Documents\git\DiscordBots\$packageName -Destination \\COWSUNRAID\Files\DiscordBots\LinkFixer
 
 try {
 #open SSH session
